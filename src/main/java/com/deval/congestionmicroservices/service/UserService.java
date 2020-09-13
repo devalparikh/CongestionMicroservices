@@ -15,20 +15,20 @@ public class UserService {
 
     private final UserDao userDao;
 
-    @Autowired // Inject into UserDao interface
-    public UserService(@Qualifier("mockDao") UserDao userDao) {
-        this.userDao = userDao;
-    }
+//    @Autowired // Inject into UserDao interface
+//    public UserService(@Qualifier("mockDao") UserDao userDao) {
+//        this.userDao = userDao;
+//    }
 
 //    @Autowired // Inject into UserDao interface
 //    public UserService(@Qualifier("mongo") UserDao userDao) {
 //        this.userDao = userDao;
 //    }
 
-//    @Autowired // Inject into UserDao interface
-//    public UserService(@Qualifier("postgres") UserDao userDao) {
-//        this.userDao = userDao;
-//    }
+    @Autowired // Inject into UserDao interface
+    public UserService(@Qualifier("postgres") UserDao userDao) {
+        this.userDao = userDao;
+    }
 
 
     public int addUser(User user) {
